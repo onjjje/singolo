@@ -185,6 +185,7 @@ header .header {
 
 .our-services p {
     font-size: 1.8rem;
+    font-weight: 300;
     padding: 17px 40px;
     line-height: 3rem;
     text-align: justify;
