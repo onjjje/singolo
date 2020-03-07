@@ -1,0 +1,186 @@
+/*main style*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+.wrapper {
+    position: relative;
+    display: block;
+    max-width: 1020px;
+    padding: 0;
+    margin: auto;
+}
+
+.hover, .hover a, .header__navigation li a:hover {
+    color: #f06c64;
+}
+
+.colored {
+    background: #f2f2f2;
+}
+
+/*get-quote*/
+
+.get-quote .wrapper {
+    background: #f06c64;
+    height: 654px;
+    border-bottom: 5px solid #f06c64;
+}
+
+.get-quote .wrapper .wrapper-quote, footer .wrapper-footer {
+    max-width: 960px;
+    padding: 0;
+    margin: auto;
+    color: #f0d8d9;
+}
+
+.get-quote .quote-description {
+    padding: 10px;
+}
+
+.get-quote .wrapper-quote .quote-description h1 {
+    padding-top: 50px;
+    letter-spacing: 0.02rem;
+}
+
+.get-quote .wrapper-quote .quote-description p {
+    padding-top: 17px;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 3rem;
+    letter-spacing: 0.001rem;
+}
+
+.get-quote .wrapper-quote .quote-form {
+    margin: 34px 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.get-quote .wrapper-quote .quote-form .quote-form-field {
+    margin-bottom: 16px;
+    padding-left: 14px;
+    height: 38px;
+    width: 619px;
+    border-radius: 5px;
+    border: none;
+    background: #d6564f;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.get-quote .wrapper-quote .quote-form .quote-form-field:focus {
+    border-radius: 5px;
+    border: 1px solid #f0d8d9;
+}
+
+.get-quote .wrapper-quote .quote-form .quote-form-field::placeholder {
+    color: #f48c8f;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+.get-quote .wrapper-quote .quote-form .quote-form-textarea {
+    height: 202px;
+    resize: none;
+    padding-top: 11px;
+    font-weight: 300;
+}
+
+.wrapper-form {
+    display: flex;
+}
+
+.get-quote .wrapper-form .contact-info {
+    margin: 10px;
+}
+
+.get-quote .wrapper-form .contact-info .contact-description h3 {
+    padding-top: 22px;
+}
+
+.quote-form button {
+    position: absolute;
+    bottom: 10px;
+    right: 360px;
+    padding: 10px;
+    width: 84px;
+    color: #f0d8d9;
+    background-color: #d6564f;
+    border: 1px solid #d6564f;;
+    border-radius: 5px;
+}
+
+.get-quote .wrapper-form .contact-info .contact-description p {
+    padding-top: 8px;
+    line-height: 2.2rem;
+    font-weight: 300;
+}
+
+.contact-info .contact-link ul {
+    padding-top: 24px;
+    padding-left: 4px;
+    list-style-type: none;
+}
+
+.contact-info .contact-link li {
+    padding-bottom: 6px;
+}
+
+.contact-info .contact-link a {
+    color: #f0d8d9;
+}
+
+.contact-info .contact-link img {
+    padding-right: 12px;
+}
+
+/*footer*/
+
+footer .wrapper {
+    height: 76px;
+    background: #2d303a;
+}
+
+footer .copyright {
+    color: #666d89;
+}
+
+footer .copyright h4 {
+    padding: 30px 0 0 11px;
+}
+
+footer .about-us-social a {
+    padding: 3px;
+}
+
+footer .about-us-social {
+    position: absolute;
+    right: 36px;
+    bottom: 19px;
+}
