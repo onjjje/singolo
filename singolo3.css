@@ -134,6 +134,7 @@ h3 {
     background-color: #d6564f;
     border: 1px solid #d6564f;;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .get-quote .wrapper-form .contact-info .contact-description p {
