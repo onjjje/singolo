@@ -210,6 +210,10 @@
         padding: 4px 20px 0px 1px;
     }
 
+    .services-description {
+        overflow: hidden;
+    }
+
     .services-description p {
         line-height: 22px;
         margin-top: 8px;
