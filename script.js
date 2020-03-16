@@ -64,9 +64,9 @@ toggleScreen(phoneVerticalScreenThree, verticalBgThree);
 // main slider
 
 let slideWidth = 1020,
-    sliderList = document.querySelector('.slide-list'),
+    sliderList = document.querySelector('.main__slider'),
     sliderMain = document.querySelector('.slider'),
-    slides = document.querySelectorAll('.main__slider'),
+    slides = document.querySelectorAll('.slider__content'),
     prev = document.querySelector('.slider-back'),
     next = document.querySelector('.slider-next'),
     pos = 0;
@@ -90,9 +90,9 @@ function scrollToPrev() {
 
     sliderList.style.transition = 'left 0.6s ease-in-out';
     sliderList.style.left = -(slideWidth * pos) + 'px';
-    if (sliderMain.classList.contains('color-bg')) {
-        sliderMain.classList.remove('color-bg');
-    } else sliderMain.classList.add('color-bg');
+    if (slides.classList.contains('color-bg')) {
+        slides.classList.remove('color-bg');
+    } else slides.classList.add('color-bg');
 }
 
 function scrollToNext() {
@@ -110,8 +110,150 @@ function scrollToNext() {
 
     sliderList.style.transition = 'left 0.6s ease-in-out';
     sliderList.style.left = -(slideWidth * pos) + 'px';
-    if (sliderMain.classList.contains('color-bg')) {
-        sliderMain.classList.remove('color-bg');
-    } else sliderMain.classList.add('color-bg');
+    if (slides.classList.contains('color-bg')) {
+        slides.classList.remove('color-bg');
+    } else slides.classList.add('color-bg');
 }
 
+//portfolio
+
+let portfolioMenu = document.querySelector('.portfolio-tags'),
+    portfolioLinks = document.querySelectorAll('.tag');
+
+portfolioMenu.addEventListener('click', function (event) {
+    portfolioLinks.forEach(function (item) {
+        event.preventDefault();
+
+        item.classList.remove('tag-selected');
+        event.target.classList.add('tag-selected');
+
+    });
+});
+
+let listImages = document.querySelector('.portfolio-box'),
+    images = document.querySelectorAll('.portfolio-img'),
+    portfolioBtnAll = document.getElementById('item-all'),
+    portfolioBtnWeb = document.getElementById('item-web'),
+    portfolioBtnDesign = document.getElementById('item-graphic'),
+    portfolioBtnArtwork = document.getElementById('item-art');
+
+function shufflePictures(event) {
+    if (!event.target.classList.contains('tag-selected')) {
+        for (let i = images.length; i > 0; i--) {
+            let randomIndex = Math.floor(Math.random() * (i + 2));
+            listImages.insertBefore(images[randomIndex], images[i]);
+        }
+    }
+}
+
+portfolioBtnAll.addEventListener('click', shufflePictures);
+portfolioBtnWeb.addEventListener('click', shufflePictures);
+portfolioBtnDesign.addEventListener('click', shufflePictures);
+portfolioBtnArtwork.addEventListener('click', shufflePictures);
+
+
+
+for (let i = 0; i < images.length; i++) {
+    images[i].addEventListener('click', function (event) {
+        images.forEach(function (item) {
+            if (event.target !== item) {
+                item.classList.remove('item-border');
+            }
+        });
+
+
+        if (event.target.classList.contains('item-border')) {
+            event.target.classList.remove('item-border');
+        } else event.target.classList.add('item-border');
+    });
+}
+
+
+//form
+
+// Form
+
+let submitBtn = document.querySelector('.submit'),
+    formWindow = document.querySelector('.modal-window'),
+    contentWindow = document.querySelector('.modal-window__content');
+okFormBtn = document.querySelector('.modal-window__submit-btn'),
+    formInputs = document.querySelectorAll('.quote-form-field'),
+    formTextarea = document.querySelector('.quote-form-textarea'),
+    nameHint = document.querySelector('.quote__name-hint'),
+    mailHint = document.querySelector('.quote__mail-hint'),
+    mailSecondHint = document.querySelector('.quote__mail-hint-second'),
+    subjectText = document.querySelector('.modal-window__subject'),
+    describeText = document.querySelector('.modal-window__describe');
+
+function cleanForm() {
+    formInputs[0].value = '';
+    formInputs[1].value = '';
+    formInputs[2].value = '';
+    formTextarea.value = '';
+    contentWindow.style.width = '350px';
+    contentWindow.style.height = '200px';
+}
+
+okFormBtn.addEventListener('click', function () {
+    formWindow.classList.add('none');
+    cleanForm();
+});
+
+window.addEventListener('click', function (event) {
+    if (event.target === formWindow) {
+        formWindow.classList.add('none');
+        cleanForm();
+    }
+});
+
+
+submitBtn.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    if (formInputs[0].value === '') {
+        nameHint.classList.remove('none');
+    }
+
+    if (formInputs[1].value === '') {
+        mailHint.classList.remove('none');
+    } else if (formInputs[1].value.search(/.+@.+\..+/i) === -1) {
+        mailSecondHint.classList.remove('none');
+    }
+
+    if (formInputs[0].value !== '' && formInputs[1].value.search(/.+@.+\..+/i) !== -1) {
+        if (formInputs[2].value === '') {
+            subjectText.textContent = 'Тема: Без темы'
+        } else subjectText.textContent = 'Тема: ' + formInputs[2].value;
+
+        if (formTextarea.value === '') {
+            describeText.textContent = 'Описание: Без описания'
+        } else describeText.textContent = 'Описание: ' + formTextarea.value;
+
+
+        if (formTextarea.value.length > 101 && formTextarea.value.length <= 401) {
+            contentWindow.style.width = '410px';
+            contentWindow.style.height = '300px';
+        }
+
+        if (formTextarea.value.length >= 402 && formTextarea.value.length < 601) {
+            contentWindow.style.width = '440px';
+            contentWindow.style.height = '370px';
+        }
+
+        if (formTextarea.value.length >= 601 && formTextarea.value.length <= 1000) {
+            contentWindow.style.width = '520px';
+            contentWindow.style.height = '450px';
+        }
+
+        formWindow.classList.remove('none');
+    }
+});
+
+formInputs[0].addEventListener('click', function () {
+    nameHint.classList.add('none');
+});
+
+formInputs[1].addEventListener('click', function () {
+    mailHint.classList.add('none');
+    mailSecondHint.classList.add('none');
+});
