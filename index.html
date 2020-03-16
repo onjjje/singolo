@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Singolo. Part 1</title>
+    <title>Singolo DOM</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
 </head>
@@ -13,46 +13,67 @@
     <!-- part 1 -->
     <header>
         <div class="wrapper">
-            <div class="header">
+            <div class="header" id="home">
                 <div class="logo">
-                    <a href="#">SINGOLO<span class="hover">*</span></a>
+                    <a href="/">SINGOLO<span class="hover">*</span></a>
                     <h1>Singolo</h1>
                 </div>
                 <nav class="header__navigation">
                     <ul class="navigation">
-                        <li class="hover"><a href="#">Home</a></li>
-                        <li><a href="#">Services</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services" class="header__link">Services</a></li>
+                        <li><a href="#porfolio" class="header__link">Portfolio</a></li>
+                        <li><a href="#about" class="header__link">About</a></li>
+                        <li><a href="#contact" class="header__link">Contact</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
     </header>
-
+    <!-- slider -->
     <section class="slider">
         <div class="wrapper">
-            <div class="main__slider">
-                <div class="slider-back"><img src="./assets/icons/slider-back.png" alt="BACK"></div>
-                <div class="slider__content">
-                    <div class="vertical-block-phone">
-                        <img class="shadow" src="./assets/slider/Shadow_phone.png" alt="#">
-                        <img class="vertical-phone" src="./assets/slider/phone.png" alt="#">
-                        <img class="vertical_bg" src="./assets/slider/vertical_bg.png" alt="#">
+            <div class="slide-wrapper">
+                <div class="main__slider">
+                    <!-- slide #1 -->
+                    <div class="slider__content">
+                        <div class="vertical-block-phone">
+                            <img class="shadow" src="./assets/slider/Shadow_phone.png" alt="#">
+                            <img class="vertical-phone" src="./assets/slider/phone.png" alt="#">
+                            <img class="vertical_bg" src="./assets/slider/vertical_bg.png" alt="#">
+                        </div>
+                        <div class="horizontal-block-phone">
+                            <img class="shadow" src="./assets/slider/Shadow_phone.png" alt="#">
+                            <img class="horizontal-phone" src="./assets/slider/phone.png" alt="#">
+                            <img class="horizontal_bg" src="./assets/slider/horizontal_bg.png" alt="#">
+                        </div>
                     </div>
-                    <div class="horizontal-block-phone">
-                        <img class="shadow" src="./assets/slider/Shadow_phone.png" alt="#">
-                        <img class="horizontal-phone" src="./assets/slider/phone.png" alt="#">
-                        <img class="horizontal_bg" src="./assets/slider/horizontal_bg.png" alt="#">
+                    <!-- slide #2 -->
+                    <div class="slider__content">
+                        <div class="vertical-block-phone-one">
+                            <img class="shadow" src="./assets/slider/Shadow_phone_big.png" alt="#">
+                            <img class="vertical-phone" src="./assets/slider/phone_big.png" alt="#">
+                            <img class="vertical_bg" src="./assets/slider/vertical_bg_2.png" alt="#">
+                        </div>
+                        <div class="vertical-block-phone-two">
+                            <img class="shadow" src="./assets/slider/Shadow_phone_2.png" alt="#">
+                            <img class="vertical-phone" src="./assets/slider/phone_2.png" alt="#">
+                            <img class="vertical_bg" src="./assets/slider/vertical_bg_3.png" alt="#">
+                        </div>
+                        <div class="vertical-block-phone-three">
+                            <img class="shadow" src="./assets/slider/Shadow_phone_2.png" alt="#">
+                            <img class="vertical-phone" src="./assets/slider/phone_2.png" alt="#">
+                            <img class="vertical_bg" src="./assets/slider/vertical_bg_3.png" alt=" #">
+                        </div>
                     </div>
                 </div>
-                <div class="slider-next"><img src="./assets/icons/slider-next.png" alt="NEXT"></div>
             </div>
+            <div class="slider-back"><img src="./assets/icons/slider-back.png" alt="BACK"></div>
+            <div class="slider-next"><img src="./assets/icons/slider-next.png" alt="NEXT"></div>
         </div>
     </section>
 
-    <section class="services">
+    <section class="services" id="services">
         <div class="wrapper wrapper-services">
             <div class="our-services">
                 <h1>Our Services</h1>
@@ -131,7 +152,7 @@
 
     <!-- part 2 -->
 
-    <section class="porfolio">
+    <section class="porfolio" id="porfolio">
         <div class="wrapper portfolio-wrap">
             <div class="portfolio-content">
                 <div class="portfolio-decription">
@@ -140,36 +161,30 @@
                     </p>
                 </div>
                 <div class="portfolio-tags">
-                    <span class="tag tag-selected">All</span>
-                    <span class="tag tag-bordered">Web Desing</span>
-                    <span class="tag tag-bordered">Graphic Desing</span>
-                    <span class="tag tag-bordered">Artwork</span>
+                    <span class="tag tag-bordered" id="item-all">All</span>
+                    <span class="tag tag-bordered" id="item-web">Web Desing</span>
+                    <span class="tag tag-bordered" id="item-graphic">Graphic Desing</span>
+                    <span class="tag tag-bordered" id="item-art">Artwork</span>
                 </div>
                 <div class="portfolio-box">
-                    <div class="layout-4-column">
-                        <div class="portfolio-img"><img src="./assets/portfolio/1_1.png" alt="#"></div>
-                        <div class="portfolio-img"><img src="./assets/portfolio/1_2.png" alt="#"></div>
-                        <div class="portfolio-img"><img src="./assets/portfolio/1_3.png" alt="#"></div>
-                        <div class="portfolio-img"><img src="./assets/portfolio/1_4.png" alt="#"></div>
-                    </div>
-                    <div class="layout-4-column">
-                        <div class="portfolio-img"><img src="./assets/portfolio/2_1.png" alt="#"></div>
-                        <div class="portfolio-img"><img src="./assets/portfolio/2_2.png" alt="#"></div>
-                        <div class="portfolio-img"><img src="./assets/portfolio/2_3.png" alt="#"></div>
-                        <div class="portfolio-img"><img src="./assets/portfolio/2_4.png" alt="#"></div>
-                    </div>
-                    <div class="layout-4-column">
-                        <div class="portfolio-img"><img src="./assets/portfolio/3_1.png" alt="#"></div>
-                        <div class="portfolio-img"><img src="./assets/portfolio/3_2.png" alt="#"></div>
-                        <div class="portfolio-img"><img src="./assets/portfolio/3_3.png" alt="#"></div>
-                        <div class="portfolio-img"><img src="./assets/portfolio/3_4.png" alt="#"></div>
-                    </div>
+                    <div class="portfolio-img"><img src="./assets/portfolio/1_1.png" alt="#"></div>
+                    <div class="portfolio-img"><img src="./assets/portfolio/1_2.png" alt="#"></div>
+                    <div class="portfolio-img"><img src="./assets/portfolio/1_3.png" alt="#"></div>
+                    <div class="portfolio-img"><img src="./assets/portfolio/1_4.png" alt="#"></div>
+                    <div class="portfolio-img"><img src="./assets/portfolio/2_1.png" alt="#"></div>
+                    <div class="portfolio-img"><img src="./assets/portfolio/2_2.png" alt="#"></div>
+                    <div class="portfolio-img"><img src="./assets/portfolio/2_3.png" alt="#"></div>
+                    <div class="portfolio-img"><img src="./assets/portfolio/2_4.png" alt="#"></div>
+                    <div class="portfolio-img"><img src="./assets/portfolio/3_1.png" alt="#"></div>
+                    <div class="portfolio-img"><img src="./assets/portfolio/3_2.png" alt="#"></div>
+                    <div class="portfolio-img"><img src="./assets/portfolio/3_3.png" alt="#"></div>
+                    <div class="portfolio-img"><img src="./assets/portfolio/3_4.png" alt="#"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="about-us">
+    <section class="about-us" id="about">
         <div class="wrapper about-us-wrap">
             <div class="about-us-content">
                 <div class="about-us-decription">
@@ -238,7 +253,7 @@
 
     <!-- part 3 -->
 
-    <section class="get-quote">
+    <section class="get-quote" id="contact">
         <div class="wrapper">
             <div class="wrapper-quote">
                 <div class="quote-description">
@@ -250,12 +265,15 @@
                 <div class="wrapper-form">
                     <form class="quote-form" action="#" method="post">
                         <input class="quote-form-field" type="text" name="name" placeholder="Name (Required)" required>
+                        <span class="quote__name-hint none">Please enter your name</span>
                         <input class="quote-form-field" type="email" name="email" placeholder="Email (Required)"
                             required>
+                        <span class="quote__mail-hint none">Please enter your email</span>
+                        <span class="quote__mail-hint-second none">Please enter valid email</span>
                         <input class="quote-form-field" type="text" name="subject" placeholder="Subject">
                         <textarea class="quote-form-field quote-form-textarea" name="description"
                             placeholder="Describe your object in detail..."></textarea>
-                        <button type="submit">Submit</button>
+                        <button type="submit" class="submit">Submit</button>
                     </form>
                     <div class="contact-info">
                         <div class="contact-description">
@@ -281,6 +299,23 @@
             </div>
         </div>
     </section>
+    <!-- alert modal -->
+    <div class="modal-window none">
+        <div class="modal-window__content">
+            <h4 class="modal-window__title">
+                Письмо отправлено
+            </h4>
+            <p class="modal-window__subject">
+                Без темы
+            </p>
+            <p class="modal-window__describe">
+                Без описания
+            </p>
+            <button class="modal-window__submit-btn">
+                Ok
+            </button>
+        </div>
+    </div>
     <footer>
         <div class="wrapper">
             <div class="wrapper-footer">
